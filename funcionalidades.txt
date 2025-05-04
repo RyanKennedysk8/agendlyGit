@@ -1,0 +1,100 @@
+---- Criar uma função
+
+function "Nome da função"(){
+    return "Ação desejada"
+}
+
+---- Criar arquivo tsx 
+
+import{"Inserir os componentes do react native"} from "react-native"
+export default function "Nome do tsx"(){
+    return(
+        <View>
+
+        <View/>
+    )
+}
+
+---- criar arquivo style
+
+export const styles = StyleSheet.create({
+    "Nome do style":{
+        "estilos desejados": "Tamanho ou tipo"
+    }
+
+})
+
+---- Imagem local
+
+<Image source={require("../img/agendaLogo.png")}/>
+
+---- Imagem internet
+
+<Image source={{uri:'https://cdn.pixabay.com/photo/2023/10/13/15/38/butterfly-8313010_1280.jpg'}}/>
+
+----- Botão Padrão
+
+<Button title="Nome do botão" onPress={"Açao Do Botão"}/>
+
+---- Criar componentes (Ex: Botão)---------------------
+
+-- aquivo tsx
+import { TouchableOpacity, Text} from "react-native";
+
+export function Button(){   
+
+    <TouchableOpacity style={styles.button}>
+        <Text>"Nome Botão"</Text>
+    </TouchableOpacity>
+}
+
+--arquivo ts
+
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+    button:{
+        width: "100%",
+        height: 50,
+        backgroundColor: "#fff",
+        justifyContent:"center",
+        alignItems: "center"
+    },
+    title:{
+        fontSize: 16,
+        
+    }
+})
+
+----------------------------------
+
+
+---- Definir propriedade e tipagem
+
+type Props = TouchableOpacityProps "isso é uma declaração de props" &{
+    title: string
+    onPress: () => void
+}
+
+export function Button({title, ...rest }: Props){   
+    return(
+    <TouchableOpacity style={styles.button} {...rest} >
+        <Text style={styles.title}>{title}</Text>
+    </TouchableOpacity>
+    )
+}
+
+---- Estados (variaveis)
+
+const [name, setName] = useState("")
+
+---- Caixa de texto 
+
+export function Input({...rest}: TextInputProps){
+    return(
+        <TextInput style={styles.textBox} {...rest}/>
+        
+    )
+}
+
+---- Navegação
