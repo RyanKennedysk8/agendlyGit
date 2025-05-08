@@ -47,6 +47,16 @@ export const styles = StyleSheet.create({
         color:"#FFF",
         alignSelf:"center",
         padding: 10
-    }
+    },
+    container: {
+      flex: 1,
+      backgroundColor: '#1b1b1b', // cor de fundo igual a da animação
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    animation: {
+      width: 600,
+      height: 600, 
+    },
 
 }) 
