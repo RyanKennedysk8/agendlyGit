@@ -1,48 +1,33 @@
 import {View, Text, StyleSheet, Image} from "react-native";
 import { styles } from "./style";
-import { Input } from "../components/input";
-import{Button} from "@/components/button/index";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {router } from "expo-router";
-import { InputIcon } from "@/components/inputIcon";
+import * as Animatable from 'react-native-animatable';
 import { faBookOpen, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
+
 export default function Index(){
-    function telaLogin() {
-        router.navigate("/screens/signIn/singIn");
-      }
-    const [name, setName] = useState("")
-    const [senha, setSenha] = useState<string>()
+    useEffect(() => {
+        const timer = setTimeout(()=> {
+            router.navigate("/screens/signIn/singIn");
+        }, 2000)
+        return () => clearTimeout(timer)
+    },[])
         
     return(
-        <View style={styles.containerPrincipal}>
-            
-            <View style= {styles.containerStart}>
+
+        <Animatable.View 
+        style={styles.containerPrincipal}
+        animation="fadeIn"
+        duration={1500}>
+
+            <View style={styles.containerMid}>
                 <FontAwesomeIcon icon={faBookOpen} size={34} color="#ffffff" />
                 <Text style={styles.title}>Agendly</Text>
             </View>
-            
-               
-            <View style={styles.containerMid}>
+        </Animatable.View>
 
-            <InputIcon icon={faEnvelope} placeholder="Digite aqui seu e-mail"/>
-            <InputIcon icon={faLock} placeholder="Senha"/>
-            
-
-            <Button title="Entrar" onPress={telaLogin}/>
-
-            <Text style={styles.text}>Esqueceu a senha?</Text>
-
-            </View>
-            
-            <View style={styles.containerEnd}>
-            <Button title="Criar nova conta" onPress={telaLogin}/>
-
-            </View>
-           
-         
-        </View>
     )
 } 
 
