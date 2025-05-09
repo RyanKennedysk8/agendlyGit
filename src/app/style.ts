@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
     text:{
         fontSize: 14,
         color:"#FFF",
-        alignSelf:"center",
+        alignSelf:"center", 
         padding: 10
     },
     container: {

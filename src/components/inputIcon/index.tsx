@@ -10,15 +10,17 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 interface InputProps extends TextInputProps {
     icon: IconDefinition;
+    place: string
+   
   }
 
-export function InputIcon({icon ,...rest}: InputProps){
+export function InputIcon({icon, place ,...rest}: InputProps){
 
     return(
         <View style={styles.container}>
-            <FontAwesomeIcon icon={icon} size={34} color="#000" />
+            <FontAwesomeIcon icon={icon} style={styles.icon} size={30} />
 
-            <Input style={styles.input} placeholder="Digite aqui seu e-mail"/>
+            <Input style={styles.input} placeholder={place}/>
             
         </View>
     )

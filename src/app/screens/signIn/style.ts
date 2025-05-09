@@ -1,11 +1,12 @@
 import { StyleSheet } from "react-native";
+import { Colors } from "@/colors/color";
 
 export const styles = StyleSheet.create({
     containerPrincipal: {
         flex: 1,
-        backgroundColor: "#1b1b1b",
+        backgroundColor: Colors.corScreen,
         paddingHorizontal: 20,
-        paddingVertical: 40,
+        paddingVertical: 40
       },
       
       containerStart: {
@@ -33,8 +34,8 @@ export const styles = StyleSheet.create({
 
     },
     img:{
-        width: 100,
-        height: 100,
+        width: 150,
+        height: 150,
         borderRadius:15
 
     },
@@ -45,7 +46,7 @@ export const styles = StyleSheet.create({
 
     },
     text:{
-        fontSize: 14,
+        fontSize: 16,
         color:"#FFF",
         alignSelf:"flex-start",
         padding: 10

@@ -18,7 +18,7 @@ export default function SplashScreen() {
   return (
     <View style={styles.container}>
       <LottieView
-        source={require('../../src/assets/animation/netflixSplash.json')
+        source={require('../../src/assets/animation/splashScreen.json')
         }
         autoPlay
         loop={false}

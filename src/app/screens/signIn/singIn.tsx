@@ -9,8 +9,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 export default function Index(){
     function telaInicial() {
-            router.navigate("../");
-          }
+        router.navigate("../");
+    }
+    function singUp(){
+        router.navigate("/screens/signUp")
+    }
         const [name, setName] = useState("")
         const [senha, setSenha] = useState<string>()
             
@@ -18,25 +21,29 @@ export default function Index(){
             <View style={styles.containerPrincipal}>
                 
                 <View style= {styles.containerStart}>
-                    <FontAwesomeIcon icon={faBookOpen} size={34} color="#ffffff" />
-                    <Text style={styles.title}>Agendly</Text>
+
+                    <Image style={styles.img} source={require("src/img/logoAgendly.png")}/>
+
                 </View>
                 
                    
                 <View style={styles.containerMid}>
     
-                <InputIcon icon={faEnvelope} placeholder="Digite aqui seu e-mail"/>
-                <InputIcon icon={faLock} placeholder="Senha"/>
+                <InputIcon icon={faEnvelope} place="Digite seu e-mail"/>
+
+                <InputIcon icon={faLock} place="Senha"/>
                 
     
                 <Button title="Entrar" onPress={telaInicial}/>
-                
+
                 <Text style={styles.text}>Esqueceu a senha?</Text>
-    
+                
                 </View>
                 
+                
                 <View style={styles.containerEnd}>
-                <Button title="Criar nova conta" onPress={telaInicial}/>
+
+                <Button title="Criar nova conta" onPress={singUp}/>
     
                 </View>
                
