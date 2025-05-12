@@ -1,15 +1,15 @@
-import {View, Text, StyleSheet, Image} from "react-native";
+import {View, Text,  Image} from "react-native";
 import { styles } from "./style";
 import{Button} from "@/components/button/index";
 import { useState } from "react";
 import {router } from "expo-router";
 import { InputIcon } from "@/components/inputIcon";
-import { faBookOpen, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faBookOpen, faEnvelope, faEyeSlash, faLock } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function Index(){
     function telaInicial() {
-        router.navigate("../");
+        router.navigate("/screens/profileSelection");
     }
     function singUp(){
         router.navigate("/screens/signUp")
@@ -29,9 +29,9 @@ export default function Index(){
                    
                 <View style={styles.containerMid}>
     
-                <InputIcon icon={faEnvelope} place="Digite seu e-mail"/>
+                <InputIcon  place="Digite seu e-mail"/>
 
-                <InputIcon icon={faLock} place="Senha"/>
+                <InputIcon icon={faEyeSlash} place="Senha"/>
                 
     
                 <Button title="Entrar" onPress={telaInicial}/>

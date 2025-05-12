@@ -1,31 +1,36 @@
 import { StyleSheet } from "react-native";
 import { Colors } from "@/colors/color";
+import { fonts } from "@/fonts/fonts";
 
 export const styles = StyleSheet.create({
     containerPrincipal: {
         flex: 1,
         backgroundColor: Colors.corScreen,
         paddingHorizontal: 20,
-        paddingVertical: 40
+        paddingVertical: 40,
+        
       },
       
       containerStart: {
         flex: 1,
         justifyContent: "flex-start",
         alignItems: "center",
+        
       },
       
       containerMid: {
         flex: 2,
         justifyContent: "center",
         alignItems: "center",
-        gap: 15,
+        gap: 16,
+        
       },
       
       containerEnd: {
         flex: 1,
         justifyContent: "flex-end",
         alignItems: "center",
+        
       },
 
     title:{
@@ -46,10 +51,11 @@ export const styles = StyleSheet.create({
 
     },
     text:{
-        fontSize: 16,
+        fontSize: 17,
         color:"#FFF",
-        alignSelf:"flex-start",
-        padding: 10
+        alignSelf:"flex-end",
+        paddingRight:15,
+        fontFamily: fonts.robotoMedium
     }
 
 })

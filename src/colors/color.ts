@@ -2,7 +2,7 @@
 export type ColorPalette = {
   corScreen: string;
   corButton: string;
-  text: string;
+  corText: string;
   textLight: string;
   placeholder: string;
   background: string;
@@ -15,10 +15,10 @@ export type ColorPalette = {
 // Implementação concreta das cores
 export const Colors: ColorPalette = {
   corScreen: '#1b1b1b',
-  corButton: '#086bdb',
-  text: '#2c3e50',
+  corButton: '#0097fe',
+  corText: '#000000',
   textLight: '#ecf0f1',
-  placeholder: 'rgba(0, 0, 0, 0.5)',
+  placeholder: '#CCCCCC',
   background: '#f9f9f9',
   white: '#ffffff',
   black: '#000000',

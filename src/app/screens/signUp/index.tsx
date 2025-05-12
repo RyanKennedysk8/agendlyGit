@@ -3,7 +3,7 @@ import { Button } from "@/components/button";
 import { router } from "expo-router";
 import { styles } from "./style";
 import { InputIcon } from "@/components/inputIcon";
-import { faCode, faEnvelope, faLock, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faEnvelope, faEyeSlash, faLock, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function Index(){
     function singIn(){
@@ -17,14 +17,17 @@ export default function Index(){
             </View>
             
             <View style={styles.backgoundMid}>
-                <InputIcon icon={faEnvelope} place="Nome"/>
-                <InputIcon icon={faUser} place="E-mail"/>
-                <InputIcon icon={faPhone} place="Telefone / Celular"/>
-                <InputIcon icon={faLock} place="Senha"/>
+                <InputIcon  place="Nome"/>
+                <InputIcon  place="E-mail"/>
+                <InputIcon  place="Telefone / Celular"/>
+                <InputIcon icon={faEyeSlash} place="Senha"/>
+                <InputIcon icon={faEyeSlash} place="Confirmar senha"/>
+                
+                <Button title="Confirmar" onPress={singIn} />
             </View>
 
             <View style={styles.backgroundEnd}>
-                <Button title="Voltar tela Login" onPress={singIn}/>
+                <Button title=" Voltar para login" onPress={singIn}/>
             </View>
             
         </View>

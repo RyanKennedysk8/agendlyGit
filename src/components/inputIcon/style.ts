@@ -1,16 +1,24 @@
 import { StyleSheet } from 'react-native';
+import { fonts } from '@/fonts/fonts';
+import { Colors } from '@/colors/color';
 
 export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#444',
     paddingHorizontal: 10,
     borderRadius: 8,
     backgroundColor: '#fff',
     height: 60,
-    width:"95%"
+    width:"95%",
+    shadowColor:"#000",
+    shadowOffset:{width: 0, height: 2},
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2
+
   },
 
   icon: {
@@ -23,11 +31,13 @@ export const styles = StyleSheet.create({
   input: {
     flex: 1,
     fontSize: 18,
-    color: '#000000'
+    color: '#000000',
+    fontFamily:fonts.robotoRegular
+    
   },
   
  placeHolder: {
-    color:"#000000",
-    opacity: 1
+    color:Colors.placeholder
+    
  }
 });
