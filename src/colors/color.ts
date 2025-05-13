@@ -3,12 +3,12 @@ export type ColorPalette = {
   corScreen: string;
   corButton: string;
   corText: string;
-  textLight: string;
   placeholder: string;
-  background: string;
+  blue: string;
+  yellow: string;
   white: string;
   black: string;
-  gray: string;
+  red: string;
   // Adicione outras cores conforme necessário
 };
 
@@ -17,12 +17,12 @@ export const Colors: ColorPalette = {
   corScreen: '#1b1b1b',
   corButton: '#0097fe',
   corText: '#000000',
-  textLight: '#ecf0f1',
+  blue: '#12fecf',
   placeholder: '#CCCCCC',
-  background: '#f9f9f9',
+  yellow: '#f7d602',
   white: '#ffffff',
   black: '#000000',
-  gray: '#8c8c8c',
+  red: "#ff0033",
 } as const; // 'as const' para inferência de tipo literal
 
 // Exportando o tipo para uso em outros arquivos

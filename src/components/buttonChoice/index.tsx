@@ -1,18 +1,23 @@
 import { styles } from "./style";
 import { TouchableOpacity, TouchableOpacityProps, Text } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+
+import Ionicons from '@expo/vector-icons/Ionicons';
+
 
 type Props = TouchableOpacityProps&{
-    title: string,
-    icon: IconDefinition
+    title: string;
+    icon: any;
+    size: number;
 }
 
-export function ButtonChoice({title,icon, ...rest}: Props){
+export function ButtonChoice({title,icon, size, ...rest}: Props){
     return(
-    <TouchableOpacity style={styles.backgroundTeste} {...rest}>
+    <TouchableOpacity style={styles.backgroundTela} {...rest}>
+        
+        <Ionicons name={icon} size={size} style={styles.icon} />
+
         <Text style={styles.titleButton}>{title}</Text>
-        <FontAwesome icon={icon} style={styles.icon} size={30}/>
+
     </TouchableOpacity>
     )
 }

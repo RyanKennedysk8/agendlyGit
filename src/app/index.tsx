@@ -12,11 +12,11 @@ export default function SplashScreen() {
   useEffect(() => {
     if (fontsLoaded) {
       const timer = setTimeout(() => {
-        router.push('/screens/signIn/singIn') 
+        router.push('/screens/profileSelection') 
       }, 3) // tempo para a splash (ajuste como quiser)
 
       return () => clearTimeout(timer)
-    }
+    } 
   }, [fontsLoaded])
 
   if (!fontsLoaded) return null
@@ -33,3 +33,4 @@ export default function SplashScreen() {
     </View>
   )
 }
+// router.push('/screens/signIn/singIn') 

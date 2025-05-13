@@ -1,30 +1,36 @@
-import { View } from "react-native";
+import { View, Text, Image} from "react-native";
 import { styles } from "./style";
-import { Button } from "@/components/button";
 import { router } from "expo-router";
 import { ButtonChoice } from "@/components/buttonChoice";
-import { faBusinessTime, faUser } from "@fortawesome/free-solid-svg-icons";
+
 
 
 export default function Index(){
     function telaSingIn(){
         router.navigate("/screens/signIn/singIn")
     }
+    function preLoad(){
+        router.navigate("/screens/preload")
+    }
     
     return(
     <View style={styles.backgroundPrincipal}>
         
         <View style={styles.backgroundTop}>
-
-        </View>
-
-        <View style={styles.backgroundMid}>
+            <Image style={styles.img} source={require("@/img/logoAgendly.png")}/>
             
         </View>
 
+        <View style={styles.backgroundMid}>
+            <Text style={styles.text}> Como você quer
+            ultilizar esse aplicativo ?</Text>
+        </View>
+
         <View style={styles.backgroundEnd}>
-            <ButtonChoice title="Usuario" icon={faUser} onPress={telaSingIn}/>
-            <ButtonChoice title="Empresa" icon={faBusinessTime} onPress={telaSingIn}/>
+
+            <ButtonChoice title="Sou uma empresa" icon="briefcase-outline" size={55} onPress={telaSingIn} />
+            <ButtonChoice icon="person-outline"  title="Sou um usuario" size={55} onPress={preLoad}/>
+
         </View>
     </View>
 )
