@@ -9,10 +9,10 @@ import { faBookOpen, faEnvelope, faEyeSlash, faLock } from '@fortawesome/free-so
 
 export default function Index(){
     function telaInicial() {
-        router.navigate("/screens/profileSelection");
+        router.navigate("/profileSelection");
     }
     function singUp(){
-        router.navigate("/screens/signUp")
+        router.navigate("/signUp")
     }
         const [name, setName] = useState("")
         const [senha, setSenha] = useState<string>()

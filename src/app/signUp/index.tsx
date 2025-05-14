@@ -7,7 +7,7 @@ import { faCode, faEnvelope, faEyeSlash, faLock, faPhone, faUser } from "@fortaw
 
 export default function Index(){
     function singIn(){
-        router.navigate("/screens/signIn/singIn")
+        router.navigate("/signIn/singIn")
     }
 
     return(

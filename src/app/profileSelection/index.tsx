@@ -7,10 +7,10 @@ import { ButtonChoice } from "@/components/buttonChoice";
 
 export default function Index(){
     function telaSingIn(){
-        router.navigate("/screens/signIn/singIn")
+        router.navigate("/signIn/singIn")
     }
     function preLoad(){
-        router.navigate("/screens/preload")
+        router.navigate("/tabs/home")
     }
     
     return(

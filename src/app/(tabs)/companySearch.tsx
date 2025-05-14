@@ -1,12 +1,13 @@
-import { View, Image} from "react-native";
+import { View, Image, Text} from "react-native";
 import { Button } from "@/components/button";
 import { router } from "expo-router";
-import { styles } from "./style";
+import { styles } from "../companySearch/style";
 
-export default function Index(){
 
+export default function CompanySearch(){
+    
     function telaInicial(){
-        router.navigate("/screens/signIn/singIn")
+        router.navigate("/signIn/singIn")
     }
    
 
@@ -17,6 +18,7 @@ export default function Index(){
 
                 <Image source={require("@/img/logoAgendly.png")} style={styles.img}/>
                 <Button title="Voltar tela" onPress={telaInicial}/>
+                <Text> Tela de Pesquisa</Text>
 
             </View>
 

@@ -9,9 +9,9 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/splash-icon.png",
+      "image": "./img/logoAgendly2.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1b1b1b"
     },
     "ios": {
       "supportsTablet": true
@@ -34,5 +34,6 @@
     "experiments": {
       "typedRoutes": true
     }
+    
   }
 }
