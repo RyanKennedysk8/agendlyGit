@@ -7,20 +7,22 @@ export const styles = StyleSheet.create({
         flex:1,
         backgroundColor:Colors.corScreen
     },
+    backgroundTop:{
+        flex:0.7,
+        alignItems:"center",
+        justifyContent:"center"
+    },
     backgroundMenu:{
         flex:5,
         backgroundColor:Colors.blue
     },
     backgroundMid:{
-        flex:9,
+        flex:10,
         backgroundColor:Colors.yellow
     },
-    backgroundEnd:{
-        flex:1,
-        
-    },
+   
     img:{
-        width:150,
-        height:150
+        width:120,
+        height:30
     }
 })

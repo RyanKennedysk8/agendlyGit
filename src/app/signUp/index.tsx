@@ -13,7 +13,7 @@ export default function Index(){
     return(
         <View style={styles.backgroundScreen}>
             <View style={styles.backgoundTop}>
-                <Image style={styles.img}source={require("@/img/logoAgendly.png")} />
+                <Image style={styles.img}source={require("@/img/logoAtualizada.png")} />
             </View>
             
             <View style={styles.backgoundMid}>

@@ -6,7 +6,7 @@ import { styles } from "../profileUser/style";
 export default function ProfileUser(){
     
     function telaInicial(){
-        router.navigate("/tabs/home")
+        router.navigate("/(tabs)/home")
     }
    
 

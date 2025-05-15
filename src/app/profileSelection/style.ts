@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
 
     backgroundPrincipal:{
         flex:1,
-        backgroundColor:"#1b1b1b",
+        backgroundColor:Colors.corScreen,
         paddingHorizontal:20,
         paddingVertical:40,
         

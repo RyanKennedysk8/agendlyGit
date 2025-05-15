@@ -1,24 +1,24 @@
-import { View, Image, Text} from "react-native";
-import { Button } from "@/components/button";
+import { View, Image, Text, TextInput, 
+Animated, ScrollView, StyleSheet,} from "react-native";
+
 import { router } from "expo-router";
 import { styles } from "../home/style";
 
 
 export default function Home(){
     
-    function telaInicial(){
-        router.navigate("/signIn/singIn")
-    }
-   
+    
 
     return(
         <View style={styles.backgroundTela}>
 
-            <View style={styles.backgroundMenu}>
+            <View style={styles.backgroundTop}>
+                <Image source={require("@/img/logoNome.png")} style={styles.img}/>
+            </View>
 
-                <Image source={require("@/img/logoAgendly.png")} style={styles.img}/>
-                <Button title="Voltar tela" onPress={telaInicial}/>
-                <Text> Lista de Agendamentos</Text>
+            <View style={styles.backgroundMenu}>
+                
+                
 
             </View>
 
@@ -26,7 +26,7 @@ export default function Home(){
                 
             </View>
 
-            <View style={styles.backgroundEnd}>
+            <View >
                 
             </View>
         </View>

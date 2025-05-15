@@ -10,14 +10,14 @@ export default function Index(){
         router.navigate("/signIn/singIn")
     }
     function preLoad(){
-        router.navigate("/tabs/home")
+        router.navigate("/(tabs)/home")
     }
     
     return(
     <View style={styles.backgroundPrincipal}>
         
         <View style={styles.backgroundTop}>
-            <Image style={styles.img} source={require("@/img/logoAgendly.png")}/>
+            <Image style={styles.img} source={require("@/img/logoAtualizada.png")}/>
             
         </View>
 
