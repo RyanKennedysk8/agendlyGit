@@ -17,7 +17,7 @@ export const Colors: ColorPalette = {
   corScreen: '#1b1b1b',
   corButton: '#0097fe',
   corText: '#000000',
-  placeholder: '#CCCCCC',
+  placeholder: '#ececec',
   blue: '#12fecf',
   yellow: '#f7d602',
   white: '#ffffff',

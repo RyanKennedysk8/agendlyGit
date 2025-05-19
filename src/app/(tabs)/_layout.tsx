@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { styles, tabBarOptions } from "../style/layout";
+import { styles, tabBarOptions } from "../layoutStyle/layout";
 import { Colors } from "@/colors/color";
 import { View, TouchableWithoutFeedback } from "react-native";
 
@@ -20,13 +20,13 @@ export default function TabLayout() {
         name="home"
         options={{
           title: '',
-          tabBarButton: (props) => <CustomTabBarButton {...props} />,
+          tabBarButton: (props ) => <CustomTabBarButton {...props} />,
           tabBarIcon: ({ color, focused }) => (
             <View style={styles.iconContainer}>
               {focused && <View style={styles.iconBackground} />}
               <Ionicons
                 name={focused ? "home" : "home-outline"}
-                size={focused ? 32 : 24}
+                size={focused ? 28 : 22}
                 color={color}
               />
             </View>
@@ -44,7 +44,7 @@ export default function TabLayout() {
               {focused && <View style={styles.iconBackground} />}
               <Ionicons
                 name={focused ? "search" : "search-outline"}
-                size={focused ? 32 : 24}
+                size={focused ? 28 : 22}
                 color={color}
               />
             </View>
@@ -62,7 +62,7 @@ export default function TabLayout() {
               {focused && <View style={styles.iconBackground} />}
               <Ionicons
                 name={focused ? "calendar" : "calendar-outline"}
-                size={focused ? 32 : 24}
+                size={focused ? 28 : 22}
                 color={color}
               />
             </View>
@@ -80,7 +80,7 @@ export default function TabLayout() {
               {focused && <View style={styles.iconBackground} />}
               <Ionicons
                 name={focused ? "person" : "person-outline"}
-                size={focused ? 32 : 24}
+                size={focused ? 28 : 22}
                 color={color}
               />
             </View>
