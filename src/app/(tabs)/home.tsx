@@ -5,9 +5,21 @@ import { Search } from "@/components/search";
 import { ButtonLocal } from "@/components/buttonLocal";
 import { router } from "expo-router";
 import CarrosselLojas from "@/components/carroselLojas";
-import { scrollY, lojas,  } from "../home/constantes";
+import { scrollY } from "../home/constantes";
+import { lojas } from "../categorias/lojas";
+
+const lojaEstetica = lojas.filter(lojas => lojas.categoria === "Estetica");
+const lojaManutenção = lojas.filter(lojas => lojas.categoria === "Manutenção");
+const lojaPetshop = lojas.filter(lojas => lojas.categoria === "Petshop");
+const lojaSaude = lojas.filter(lojas => lojas.categoria === "Saude");
+const lojaRecomendado = lojas.filter(lojas => lojas.categoria === "Recomendado");
 
 
+const headerTranslate = scrollY.interpolate({
+    inputRange: [0, 100], // quando o usuário rola de 0 a 100 pixels...
+    outputRange: [0, -40], // move o header verticalmente para cima
+    extrapolate: "clamp", // evita sair do intervalo
+});
 
 export default function Home(){
     
@@ -15,11 +27,6 @@ export default function Home(){
     function telaPesquisa(){
         router.navigate("/(tabs)/companySearch")
     }
-    const headerTranslate = scrollY.interpolate({
-        inputRange: [0, 100], // quando o usuário rola de 0 a 100 pixels...
-        outputRange: [0, -40], // move o header verticalmente para cima
-        extrapolate: "clamp", // evita sair do intervalo
-    });
 
     return(
 
@@ -63,7 +70,7 @@ export default function Home(){
             
             <ScrollView>
             <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Recomendados para você</Text>
-            <CarrosselLojas lojas={lojas} />
+            <CarrosselLojas lojas={lojaRecomendado} />
             </ScrollView>
 
           </View>
@@ -72,8 +79,8 @@ export default function Home(){
             <View style={styles.card}>
             
                 <ScrollView>
-                <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Recomendados para você</Text>
-                <CarrosselLojas lojas={lojas} />
+                <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Estética</Text>
+                <CarrosselLojas lojas={lojaEstetica} />
                 </ScrollView>
 
             </View>
@@ -81,19 +88,29 @@ export default function Home(){
             <View style={styles.card}>
             
                 <ScrollView>
-                <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Recomendados para você</Text>
-                <CarrosselLojas lojas={lojas} />
+                <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Saúde</Text>
+                <CarrosselLojas lojas={lojaSaude} />
                 </ScrollView>
 
             </View>
             <View style={styles.card}>
             
                 <ScrollView>
-                <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Recomendados para você</Text>
-                <CarrosselLojas lojas={lojas} />
+                <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Petshop</Text>
+                <CarrosselLojas lojas={lojaPetshop} />
                 </ScrollView>
 
             </View>
+            <View style={styles.card}>
+            
+            <ScrollView>
+            <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Manutenção</Text>
+            <CarrosselLojas lojas={lojaManutenção} />
+            </ScrollView>
+            
+
+        </View>
+
 
         </Animated.ScrollView>
 

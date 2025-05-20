@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { useRouter } from 'expo-router';
-import { styles
-    
- } from './style';
+import { styles } from './style';
+
+
 const { width } = Dimensions.get('window');
 
 interface Loja {
@@ -12,22 +12,30 @@ interface Loja {
   imagem: string;
   endereco: string;
   distancia: string;
+  categoria: string;
 }
 
 interface Props {
   lojas: Loja[];
 }
+const router = useRouter();
+
 
 export default function CarrosselLojas({ lojas }: Props) {
-  const router = useRouter();
+
+  
 
   const renderItem = ({ item }: { item: Loja }) => (
     <TouchableOpacity
       style={styles.card}
       onPress={() =>
-        router.push({ pathname: '/lojas/[id]', params: { id: item.id } })
+        router.push({ pathname: '/lojas/[id]', 
+          params: { 
+            id: item.id,
+            nome: item.nome,  
+            imagem: item.imagem } }) 
       }
-    >
+    > 
       <Image source={{ uri: item.imagem }} style={styles.imagem} />
       <View style={styles.infoContainer}>
         <Text style={styles.nome}>{item.nome}</Text>
@@ -38,6 +46,8 @@ export default function CarrosselLojas({ lojas }: Props) {
     </TouchableOpacity>
   );
 
+ 
+
   return (
     <FlatList
       data={lojas}
@@ -47,5 +57,6 @@ export default function CarrosselLojas({ lojas }: Props) {
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.lista}
     />
+
   );
 }
