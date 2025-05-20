@@ -22,7 +22,9 @@ export const lojas = [
         imagem: "https://img.freepik.com/fotos-gratis/homem-em-um-salao-de-barbearia-fazendo-o-corte-de-cabelo-e-barba_1303-20953.jpg?ga=GA1.1.566894296.1747072982&semt=ais_hybrid&w=740",
         endereco: "R. Mafra, 432 - Coqueiros, Belo Horizonte",
         distancia: "1.8km"
-    },
+    }, 
+
+
 ]
 
 // Criamos uma referência para controlar o scroll da tela

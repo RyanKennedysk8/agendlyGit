@@ -12,6 +12,7 @@ interface Loja {
   imagem: string;
   endereco: string;
   distancia: string;
+  categoria: string;
 }
 
 interface Props {

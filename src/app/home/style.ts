@@ -7,7 +7,7 @@ const {height} = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
-    height:height-30,
+    height:height-40,
     backgroundColor: "#ebebeb",
   },
 
