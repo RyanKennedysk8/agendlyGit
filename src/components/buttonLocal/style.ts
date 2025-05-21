@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     titleButton:{
         fontSize:16,
         color:"#ffffff",
-        fontFamily:fonts.robotoThin,
+        fontFamily:fonts.robotoRegularItalic,
         justifyContent:"center"
 
     },icon: {

@@ -29,11 +29,13 @@ export default function CarrosselLojas({ lojas }: Props) {
     <TouchableOpacity
       style={styles.card}
       onPress={() =>
-        router.push({ pathname: '/lojas/[id]', 
+        router.push({ pathname: '/screenLoja/[id]', 
           params: { 
             id: item.id,
             nome: item.nome,  
-            imagem: item.imagem } }) 
+            imagem: item.imagem,
+            distancia: item.distancia
+          } }) 
       }
     > 
       <Image source={{ uri: item.imagem }} style={styles.imagem} />

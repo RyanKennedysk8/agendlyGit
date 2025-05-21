@@ -1,3 +1,4 @@
+import { fonts } from "agendlyGit/src/fonts/fonts";
 import { StyleSheet, Dimensions } from "react-native";
 
 const { width } = Dimensions.get('window');
@@ -29,22 +30,14 @@ export const styles = StyleSheet.create({
     padding: 6,
     borderRadius: 8,
   },
-  avaliacao: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  avaliacoes: {
-    color: '#050505',
-    fontSize: 12,
-  },
   nome: {
     fontSize: 18,
-    fontWeight: '700',
+    fontFamily:fonts.robotoBlack,
     marginBottom: 4,
   },
   endereco: {
     fontSize: 14,
     color: '#2b2b2b',
+    fontFamily:fonts.robotoRegular
   },
 });

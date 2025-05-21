@@ -6,7 +6,7 @@ import { ButtonLocal } from "@/components/buttonLocal";
 import { router } from "expo-router";
 import CarrosselLojas from "@/components/carroselLojas";
 import { scrollY } from "../home/constantes";
-import { lojas } from "../categorias/lojas";
+import { lojas } from "../bancoDeDados/lojas";
 
 const lojaEstetica = lojas.filter(lojas => lojas.categoria === "Estetica");
 const lojaManutenção = lojas.filter(lojas => lojas.categoria === "Manutenção");
@@ -14,20 +14,20 @@ const lojaPetshop = lojas.filter(lojas => lojas.categoria === "Petshop");
 const lojaSaude = lojas.filter(lojas => lojas.categoria === "Saude");
 const lojaRecomendado = lojas.filter(lojas => lojas.categoria === "Recomendado");
 
-function telaPesquisa(){
-    router.navigate("/(tabs)/companySearch")
-}
 
 
-
-const headerTranslate = scrollY.interpolate({
-    inputRange: [0, 100], // quando o usuário rola de 0 a 100 pixels...
-    outputRange: [0, -40], // move o header verticalmente para cima
-    extrapolate: "clamp", // evita sair do intervalo
-});
 
 export default function Home(){
     
+    function telaPesquisa(){
+        router.navigate("/(tabs)/companySearch")
+    }
+
+    const headerTranslate = scrollY.interpolate({
+        inputRange: [0, 100], // quando o usuário rola de 0 a 100 pixels...
+        outputRange: [0, -40], // move o header verticalmente para cima
+        extrapolate: "clamp", // evita sair do intervalo
+    });
 
     return(
 

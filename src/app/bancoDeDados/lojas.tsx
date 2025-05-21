@@ -1,7 +1,7 @@
 export const lojas =[
     {
         id: "1",
-        nome: "salão duarte",
+        nome: "Salão Duarte",
         imagem: "https://cdn.pixabay.com/photo/2020/05/21/11/42/hair-salon-5200393_1280.jpg",
         endereco: "R. Henrique Leite, 45 - Novo progresso, Contagem",
         distancia: "5.3 km",
