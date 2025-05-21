@@ -18,11 +18,11 @@ interface Loja {
 interface Props {
   lojas: Loja[];
 }
-const router = useRouter();
 
 
 export default function CarrosselLojas({ lojas }: Props) {
-
+  
+  const router = useRouter();
   
 
   const renderItem = ({ item }: { item: Loja }) => (

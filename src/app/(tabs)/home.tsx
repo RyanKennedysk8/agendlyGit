@@ -5,7 +5,6 @@ import { Search } from "@/components/search";
 import { ButtonLocal } from "@/components/buttonLocal";
 import { router } from "expo-router";
 import CarrosselLojas from "@/components/carroselLojas";
-<<<<<<< HEAD
 import { scrollY } from "../home/constantes";
 import { lojas } from "../categorias/lojas";
 
@@ -14,21 +13,12 @@ const lojaManutenção = lojas.filter(lojas => lojas.categoria === "Manutenção
 const lojaPetshop = lojas.filter(lojas => lojas.categoria === "Petshop");
 const lojaSaude = lojas.filter(lojas => lojas.categoria === "Saude");
 const lojaRecomendado = lojas.filter(lojas => lojas.categoria === "Recomendado");
-=======
-import { scrollY  } from "../home/constantes";
-import { lojas } from "../categorias/lojas";
->>>>>>> c20aace860f31752bbbd8104881e56deb5c58861
 
 function telaPesquisa(){
     router.navigate("/(tabs)/companySearch")
 }
 
-const lojasEstetica = lojas.filter(loja => loja.categoria === "Estética");
-const lojasManutencao = lojas.filter(loja => loja.categoria === "Manutenção");
-const lojasPetshopping = lojas.filter(loja => loja.categoria === "Petshopping");
-const lojasSaude = lojas.filter(loja => loja.categoria === "Saúde");
 
-const lojasRecomendado = lojas.filter(loja => loja.categoria === "Recomendado")
 
 const headerTranslate = scrollY.interpolate({
     inputRange: [0, 100], // quando o usuário rola de 0 a 100 pixels...
@@ -38,19 +28,6 @@ const headerTranslate = scrollY.interpolate({
 
 export default function Home(){
     
-
-<<<<<<< HEAD
-    function telaPesquisa(){
-        router.navigate("/(tabs)/companySearch")
-    }
-=======
-  
-    const headerTranslate = scrollY.interpolate({
-        inputRange: [0, 100], // quando o usuário rola de 0 a 100 pixels...
-        outputRange: [0, -40], // move o header verticalmente para cima
-        extrapolate: "clamp", // evita sair do intervalo
-    });
->>>>>>> c20aace860f31752bbbd8104881e56deb5c58861
 
     return(
 
@@ -94,11 +71,9 @@ export default function Home(){
             
             <ScrollView>
             <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Recomendados para você</Text>
-<<<<<<< HEAD
+
             <CarrosselLojas lojas={lojaRecomendado} />
-=======
-            <CarrosselLojas lojas={lojasRecomendado} />
->>>>>>> c20aace860f31752bbbd8104881e56deb5c58861
+
             </ScrollView>
 
           </View>
@@ -108,11 +83,7 @@ export default function Home(){
             
                 <ScrollView>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Estética</Text>
-<<<<<<< HEAD
                 <CarrosselLojas lojas={lojaEstetica} />
-=======
-                <CarrosselLojas lojas={lojasEstetica} />
->>>>>>> c20aace860f31752bbbd8104881e56deb5c58861
                 </ScrollView>
 
             </View>
@@ -121,13 +92,8 @@ export default function Home(){
             <View style={styles.card}>
             
                 <ScrollView>
-<<<<<<< HEAD
                 <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Saúde</Text>
                 <CarrosselLojas lojas={lojaSaude} />
-=======
-                <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Petshop</Text>
-                <CarrosselLojas lojas={lojasPetshopping} />
->>>>>>> c20aace860f31752bbbd8104881e56deb5c58861
                 </ScrollView>
 
             </View>
@@ -138,18 +104,13 @@ export default function Home(){
             <View style={styles.card}>
             
                 <ScrollView>
-<<<<<<< HEAD
                 <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Petshop</Text>
                 <CarrosselLojas lojas={lojaPetshop} />
-=======
-                <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Saúde</Text>
-                <CarrosselLojas lojas={lojasSaude} />
->>>>>>> c20aace860f31752bbbd8104881e56deb5c58861
                 </ScrollView>
 
             </View>
             <View style={styles.card}>
-            
+             
             <ScrollView>
             <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 16 }}>Manutenção</Text>
             <CarrosselLojas lojas={lojaManutenção} />
