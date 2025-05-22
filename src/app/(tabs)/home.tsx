@@ -3,7 +3,7 @@ Animated, ScrollView} from "react-native";
 import { styles } from "../home/style";
 import { Search } from "@/components/search";
 import { ButtonLocal } from "@/components/buttonLocal";
-import { router } from "expo-router";
+import { router, useRouter } from "expo-router";
 import CarrosselLojas from "@/components/carroselLojas";
 import { scrollY } from "../home/constantes";
 import { lojas } from "../bancoDeDados/lojas";
@@ -19,6 +19,7 @@ const lojaRecomendado = lojas.filter(lojas => lojas.categoria === "Recomendado")
 
 export default function Home(){
     
+
     function telaPesquisa(){
         router.navigate("/(tabs)/companySearch")
     }
