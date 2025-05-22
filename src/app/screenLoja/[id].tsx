@@ -16,6 +16,7 @@ export default function LojaDetalhes() {
   const lojaRecomendado = lojas.filter(lojas => lojas.categoria === "Recomendado")
   const params = useLocalSearchParams();
   const imagem = Array.isArray(params.imagem) ? params.imagem[0] : params.imagem;
+  const logo = Array.isArray(params.logo) ? params.logo[0] : params.logo;
   const scrollY = useRef(new Animated.Value(0)).current;
 
 
@@ -49,7 +50,7 @@ export default function LojaDetalhes() {
                 <View style={styles.backgroundInfoBox}>
                     <Image 
                     style={styles.logoImg}
-                    source={require("@/img/SalaoDuarte.png")}/>
+                    source={{uri:logo}}/>
                     <View style={styles.conteinerText}>
                         <Text style={styles.nomeLoja}>
                         {params.nome}
@@ -78,9 +79,9 @@ export default function LojaDetalhes() {
      
             <Text style={{fontSize:25, fontWeight:800}}>Texte loja {params.id}</Text>
             <CarrosselLojas lojas={lojaRecomendado}/>
+            <Button title='voltar' onPress={voltar}/>
             <Text style={{fontSize:25, fontWeight:800}}>Texte loja {params.id}</Text>
             <CarrosselLojas lojas={lojaRecomendado}/>
-            <Button title='voltar' onPress={voltar}/>
             <Text style={{fontSize:25, fontWeight:800}}>Texte loja {params.id}</Text>
             <CarrosselLojas lojas={lojaRecomendado}/>
             <Text style={{fontSize:25, fontWeight:800}}>Texte loja {params.id}</Text>

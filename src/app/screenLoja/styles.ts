@@ -60,7 +60,7 @@ export const styles = StyleSheet.create({
     bottom:50,
     borderRadius: 35,
     backgroundColor: '#00000000',
-    marginBottom:8
+
   },
   nomeLoja: {
     bottom:50,

@@ -9,6 +9,7 @@ const { width } = Dimensions.get('window');
 interface Loja {
   id: string;
   nome: string;
+  logo:string;
   imagem: string;
   endereco: string;
   distancia: string;
@@ -34,7 +35,8 @@ export default function CarrosselLojas({ lojas }: Props) {
             id: item.id,
             nome: item.nome,  
             imagem: item.imagem,
-            distancia: item.distancia
+            distancia: item.distancia,
+            logo: item.logo
           } }) 
       }
     > 

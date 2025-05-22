@@ -1,4 +1,4 @@
-import { fonts } from "agendlyGit/src/fonts/fonts";
+import { fonts } from "@/fonts/fonts";
 import { StyleSheet, Dimensions } from "react-native";
 
 const { width } = Dimensions.get('window');
