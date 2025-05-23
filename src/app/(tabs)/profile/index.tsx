@@ -1,12 +1,12 @@
 import { View, Image, Text} from "react-native";
 import { Button } from "@/components/button";
 import { router } from "expo-router";
-import { styles } from "../profileUser/style";
+import { styles } from "@/app/profileUser/style"; 
 
-export default function ProfileUser(){
+export default function Index(){
     
     function telaInicial(){
-        router.navigate("/(tabs)/home")
+        router.navigate("/signIn/singIn")
     }
    
 

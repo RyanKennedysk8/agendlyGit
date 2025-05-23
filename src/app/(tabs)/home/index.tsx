@@ -1,12 +1,12 @@
 import { View, Image, Text, 
 Animated, ScrollView} from "react-native";
-import { styles } from "../home/style";
+import { styles } from "@/app/home/style"; 
 import { Search } from "@/components/search";
 import { ButtonLocal } from "@/components/buttonLocal";
 import { router, useRouter } from "expo-router";
 import CarrosselLojas from "@/components/carroselLojas";
-import { scrollY } from "../home/constantes";
-import { lojas } from "../bancoDeDados/lojas";
+import { scrollY } from "@/app/home/constantes"; 
+import { lojas } from "@/app/bancoDeDados/lojas"; 
 
 const lojaEstetica = lojas.filter(lojas => lojas.categoria === "Estetica");
 const lojaManutenção = lojas.filter(lojas => lojas.categoria === "Manutenção");
@@ -17,11 +17,11 @@ const lojaRecomendado = lojas.filter(lojas => lojas.categoria === "Recomendado")
 
 
 
-export default function Home(){
+export default function Index(){
     
 
     function telaPesquisa(){
-        router.navigate("/(tabs)/companySearch")
+        router.navigate("/(tabs)/list")
     }
 
     const headerTranslate = scrollY.interpolate({

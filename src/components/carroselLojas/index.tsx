@@ -30,7 +30,7 @@ export default function CarrosselLojas({ lojas }: Props) {
     <TouchableOpacity
       style={styles.card}
       onPress={() =>
-        router.replace({ pathname: '/screenLoja/[id]', 
+        router.push({ pathname: '/(tabs)/home/[id]', 
           params: { 
             id: item.id,
             nome: item.nome,  

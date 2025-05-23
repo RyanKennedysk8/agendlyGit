@@ -1,10 +1,10 @@
 import { View, Image, Text} from "react-native";
 import { Button } from "@/components/button";
 import { router } from "expo-router";
-import { styles } from "../companySearch/style";
+import { styles } from "@/app/companySearch/style"; 
 
 
-export default function CompanySearch(){
+export default function Index(){
     
     function telaInicial(){
         router.navigate("/signIn/singIn")

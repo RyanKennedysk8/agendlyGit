@@ -51,7 +51,7 @@ export const styles = StyleSheet.create({
     flexDirection:"row"
   },
   backgroundScroll: {
-    paddingTop: 270,
+    paddingTop: 200,
     paddingBottom: 30,
   },
   bannerImg: {
@@ -103,7 +103,7 @@ export const styles = StyleSheet.create({
   imgLogoMini:{
     width:40,
     height:40,
-    borderRadius:15
+    borderRadius:5
   }
   
 });

@@ -14,6 +14,7 @@ const CustomTabBarButton = ({ children, onPress }: any) => (
 
 export default function TabLayout() {
   return (
+    
     <Tabs screenOptions={tabBarOptions}>
       
       <Tabs.Screen
@@ -35,7 +36,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="companySearch"
+        name="search/index"
         options={{
           title: '',
           tabBarButton: (props) => <CustomTabBarButton {...props} />,
@@ -53,7 +54,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="appointmentsList"
+        name="list"
         options={{
           title: '',
           tabBarButton: (props) => <CustomTabBarButton {...props} />,
@@ -71,7 +72,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="profileUser"
+        name="profile/index"
         options={{
           title: '',
           tabBarButton: (props) => <CustomTabBarButton {...props} />,

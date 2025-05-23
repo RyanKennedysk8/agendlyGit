@@ -4,23 +4,37 @@ import { View, Text, Image, Animated, TouchableOpacity } from 'react-native';
 import { styles } from '@/app/screenLoja/styles';
 import { useRef } from 'react';
 import CarrosselLojas from '@/components/carroselLojas';
-import { lojas } from '../bancoDeDados/lojas';
+import { lojas } from '@/app/bancoDeDados/lojas'; 
 import { Ionicons } from '@expo/vector-icons';
-import {Stack} from 'expo-router';
-import React from 'react';
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+import { useEffect } from 'react';
+import { useNavigation } from 'expo-router';
 
 
-
-export default function LojaDetalhes() {
-  const params = useLocalSearchParams();
+export default function Index() {
   
+  const navigation = useNavigation();
+  const params = useLocalSearchParams();
+  const insets = useSafeAreaInsets();
+
   function voltar(){
     router.navigate("/(tabs)/home");
   }
-  
+
+  useEffect(() => {
+    // Garante que o header NATIVO está visível APENAS com a seta
+    navigation.setOptions({ 
+      headerShown: true,
+      headerTitle: "", // Remove título
+      headerTransparent: true, // Se quiser fundo transparente
+      headerBackTitleVisible: false // Esconde texto iOS
+    });
+  }, []);
 
   const lojaRecomendado = lojas.filter(lojas => lojas.categoria === "Recomendado")
-  
+  const lojaPetshop = lojas.filter(lojas => lojas.categoria === "Petshop")
+
   const imagem = Array.isArray(params.imagem) ? params.imagem[0] : params.imagem;
   const logo = Array.isArray(params.logo) ? params.logo[0] : params.logo;
   const scrollY = useRef(new Animated.Value(0)).current;
@@ -51,7 +65,7 @@ export default function LojaDetalhes() {
 
   return (
     
-    <View style={styles.containerPrincipal}>
+    <View style={[styles.containerPrincipal]}>
           {/* Banner */}
       <Animated.View 
       style={[styles.containerTop,
@@ -81,10 +95,10 @@ export default function LojaDetalhes() {
 
       <Animated.View style={[styles.containerMiniTopo, {transform:[{translateY:miniTopoAnimation}]}]}
       >
-        <TouchableOpacity style={styles.containerBotaoVoltar} onPress={voltar}>
+        
+        <View style={styles.containerBotaoVoltar}>
 
-          <Ionicons name='chevron-back' size={40} style={styles.icon}/>
-        </TouchableOpacity>
+        </View>
 
         <Text style={styles.textMiniTopo}>nome:{params.nome} </Text>
 
@@ -104,15 +118,13 @@ export default function LojaDetalhes() {
       >
         <View style={{ paddingHorizontal: 20, paddingTop: 20, gap:20 }}>
 
-            <Text style={{fontSize:25, fontWeight:800}}>Texte loja {params.id}</Text>
-            <CarrosselLojas lojas={lojaRecomendado}/>
-            <Text style={{fontSize:25, fontWeight:800}}>Texte loja {params.id}</Text>
-            <CarrosselLojas lojas={lojaRecomendado}/>
-            <Text style={{fontSize:25, fontWeight:800}}>Texte loja {params.id}</Text>
-            <CarrosselLojas lojas={lojaRecomendado}/>
-            <Text style={{fontSize:25, fontWeight:800}}>Texte loja {params.id}</Text>
-            <CarrosselLojas lojas={lojaRecomendado}/>
             
+            <CarrosselLojas lojas={lojaRecomendado}/>
+            <CarrosselLojas lojas={lojaPetshop}/>
+            <CarrosselLojas lojas={lojaRecomendado}/>
+            <CarrosselLojas lojas={lojaPetshop}/>
+            <CarrosselLojas lojas={lojaRecomendado}/>
+            <CarrosselLojas lojas={lojaPetshop}/>
        
         </View>
       </Animated.ScrollView>
