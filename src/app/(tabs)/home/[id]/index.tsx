@@ -7,7 +7,7 @@ import CarrosselLojas from '@/components/carroselLojas';
 import { lojas } from '@/app/bancoDeDados/lojas'; 
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-
+import { Pressable } from 'react-native';
 import { useEffect } from 'react';
 import { useNavigation } from 'expo-router';
 
@@ -23,12 +23,22 @@ export default function Index() {
   }
 
   useEffect(() => {
-    // Garante que o header NATIVO está visível APENAS com a seta
+    //para garantir que o header NATIVO está visível APENAS com a seta
     navigation.setOptions({ 
       headerShown: true,
       headerTitle: "", // Remove título
-      headerTransparent: true, // Se quiser fundo transparente
-      headerBackTitleVisible: false // Esconde texto iOS
+      headerTransparent: true, // fundo transparente
+      headerBackTitleVisible: false,// Esconde texto iOS
+      headerBackVisible: false, // Esconde a seta nativa
+      headerLeft: () => ( //personalização da seta
+        <Pressable
+          onPress={() => router.back()}
+          style={{ paddingLeft: 10 }}
+            >
+            <Ionicons name="arrow-back" size={24} color="#fff" />
+        </Pressable>
+      )
+     
     });
   }, []);
 
