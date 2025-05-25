@@ -1,7 +1,7 @@
 import { View, Image } from "react-native";
 import { Button } from "@/components/button";
 import { router } from "expo-router";
-import { styles } from "./style";
+import { styles } from "../../../styles/singUp/style";
 import { InputIcon } from "@/components/inputIcon";
 import { faCode, faEnvelope, faEyeSlash, faLock, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 

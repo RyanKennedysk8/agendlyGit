@@ -1,7 +1,7 @@
 import { View, Image, Text} from "react-native";
 import { Button } from "@/components/button";
 import { router } from "expo-router";
-import { styles } from "@/app/companySearch/style"; 
+import { styles } from "@/styles/companySearch/style"; 
 
 
 export default function Index(){

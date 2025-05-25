@@ -1,5 +1,5 @@
 import {View, Text,  Image} from "react-native";
-import { styles } from "./style";
+import { styles } from "../../../styles/singIn/style";
 import{Button} from "@/components/button/index";
 import { useState } from "react";
 import {router } from "expo-router";

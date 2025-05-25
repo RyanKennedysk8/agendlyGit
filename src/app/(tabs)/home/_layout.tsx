@@ -3,6 +3,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+
+
 export default function Layout() {
   // navigation disponível dentro do componente Layout
   const navigation = useNavigation();

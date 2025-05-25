@@ -1,12 +1,12 @@
 import { View, Image, Text, 
 Animated, ScrollView} from "react-native";
-import { styles } from "@/app/home/style"; 
+import { styles } from "@/styles/inicio/style"; 
 import { Search } from "@/components/search";
 import { ButtonLocal } from "@/components/buttonLocal";
 import { router, useRouter } from "expo-router";
 import CarrosselLojas from "@/components/carroselLojas";
-import { scrollY } from "@/app/home/constantes"; 
-import { lojas } from "@/app/bancoDeDados/lojas"; 
+import { scrollY } from "@/constants/inicio/constantes"; 
+import { lojas } from "@/constants/bancoDeDados/lojas"; 
 
 const lojaEstetica = lojas.filter(lojas => lojas.categoria === "Estetica");
 const lojaManutenção = lojas.filter(lojas => lojas.categoria === "Manutenção");

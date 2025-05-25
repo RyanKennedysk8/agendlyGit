@@ -21,23 +21,17 @@ interface Props {
 }
 
 
+
 export default function CarrosselLojas({ lojas }: Props) {
   
   const router = useRouter();
-  
 
   const renderItem = ({ item }: { item: Loja }) => (
     <TouchableOpacity
       style={styles.card}
       onPress={() =>
-        router.push({ pathname: '/(tabs)/home/[id]', 
-          params: { 
-            id: item.id,
-            nome: item.nome,  
-            imagem: item.imagem,
-            distancia: item.distancia,
-            logo: item.logo
-          } }) 
+        router.push(`/(tabs)/home/${item.id}`) 
+        
       }
     > 
       <Image source={{ uri: item.imagem }} style={styles.imagem} />
@@ -48,7 +42,7 @@ export default function CarrosselLojas({ lojas }: Props) {
         </Text>
       </View>
     </TouchableOpacity>
-  );
+  ); 
 
  
 

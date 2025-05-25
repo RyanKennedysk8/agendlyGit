@@ -3,9 +3,12 @@ import { Slot, SplashScreen } from "expo-router";
 import { useFonts } from "@/hooks/useFonts";
 import { useEffect } from "react";
 
-export default function RootLayout() {
-  const fontsLoaded = useFonts();
 
+
+export default function RootLayout() {
+  
+  const fontsLoaded = useFonts();
+  
   useEffect(() => {
     if (fontsLoaded) {
       SplashScreen.hideAsync();
@@ -17,4 +20,5 @@ export default function RootLayout() {
   }
 
   return <Slot />;
+   
 }

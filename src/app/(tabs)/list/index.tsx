@@ -1,13 +1,9 @@
 import { View, Image, Text} from "react-native";
-import { Button } from "@/components/button";
-import { router } from "expo-router";
-import { styles } from "@/app/appointmentsList/style"; 
+
+import { styles } from "@/styles/appointmentsList/style"; 
 
 export default function Index(){
-    
-    function telaInicial(){
-        router.navigate("/signIn/singIn")
-    }
+   
    
 
     return(

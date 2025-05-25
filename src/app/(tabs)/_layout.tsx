@@ -1,7 +1,7 @@
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { styles, tabBarOptions } from "../layoutStyle/layout";
-import { Colors } from "@/colors/color";
+import { styles, tabBarOptions } from "../../styles/layoutStyle/layout";
+
 import { View, TouchableWithoutFeedback } from "react-native";
 
 const CustomTabBarButton = ({ children, onPress }: any) => (
@@ -36,7 +36,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="search/index"
+        name="search"
         options={{
           title: '',
           tabBarButton: (props) => <CustomTabBarButton {...props} />,
@@ -72,7 +72,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="profile/index"
+        name="profile"
         options={{
           title: '',
           tabBarButton: (props) => <CustomTabBarButton {...props} />,

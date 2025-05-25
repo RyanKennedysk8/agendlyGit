@@ -1,10 +1,10 @@
 
 import { router, useLocalSearchParams } from 'expo-router';
 import { View, Text, Image, Animated, TouchableOpacity } from 'react-native';
-import { styles } from '@/app/screenLoja/styles';
+import { styles } from '@/styles/screenLoja/styles';
 import { useRef } from 'react';
 import CarrosselLojas from '@/components/carroselLojas';
-import { lojas } from '@/app/bancoDeDados/lojas'; 
+import { lojas } from '@/constants/bancoDeDados/lojas'; 
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Pressable } from 'react-native';
@@ -13,9 +13,13 @@ import { useNavigation } from 'expo-router';
 
 
 export default function Index() {
-  
+
+  const {id} = useLocalSearchParams();
+  console.log("id: ", id);
+  const loja = lojas.find(loja => String(loja.id) === String(id));
+
+
   const navigation = useNavigation();
-  const params = useLocalSearchParams();
   const insets = useSafeAreaInsets();
 
   function voltar(){
@@ -45,8 +49,8 @@ export default function Index() {
   const lojaRecomendado = lojas.filter(lojas => lojas.categoria === "Recomendado")
   const lojaPetshop = lojas.filter(lojas => lojas.categoria === "Petshop")
 
-  const imagem = Array.isArray(params.imagem) ? params.imagem[0] : params.imagem;
-  const logo = Array.isArray(params.logo) ? params.logo[0] : params.logo;
+  const imagem = Array.isArray(loja?.imagem) ? loja.imagem[0] : loja?.imagem;
+  const logo = Array.isArray(loja?.logo) ? loja?.logo[0] : loja?.logo;
   const scrollY = useRef(new Animated.Value(0)).current;
 
   const botaoVoltarAnimation = scrollY.interpolate({
@@ -83,7 +87,7 @@ export default function Index() {
        
       >
           <View style={styles.containerBanner}>
-                <Image source={{ uri: imagem }} style={styles.bannerImg} />
+                <Image source={{ uri: loja?.imagem }} style={styles.bannerImg} />
 
                 <View style={styles.containerInfoBox}>
                     <Image 
@@ -91,9 +95,9 @@ export default function Index() {
                     source={{uri:logo}}/>
                     <View style={styles.conteinerText}>
                         <Text style={styles.nomeLoja}>
-                        {params.nome}
+                        {loja?.nome}
                         </Text>
-                        <Text style={styles.distanciaLoja}> Distancia: {params.distancia}</Text>
+                        <Text style={styles.distanciaLoja}> Distancia: {loja?.distancia}</Text>
                           
                     </View>
                     
@@ -110,7 +114,7 @@ export default function Index() {
 
         </View>
 
-        <Text style={styles.textMiniTopo}>nome:{params.nome} </Text>
+        <Text style={styles.textMiniTopo}>nome:{loja?.nome} </Text>
 
         <Image style={styles.imgLogoMini} source={{uri: logo}}/>
 

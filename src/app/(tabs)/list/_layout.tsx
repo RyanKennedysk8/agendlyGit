@@ -1,18 +1,42 @@
-import { Stack } from "expo-router";
+import { Stack } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-export default function listLayout() {
+
+
+export default function Layout() {
+  // navigation disponível dentro do componente Layout
+  const navigation = useNavigation();
+
+  //  Botão personalizado
+  const CustomBackButton = () => (
+    <TouchableOpacity
+      onPress={() => navigation.goBack()}
+      style={{ paddingLeft: 10 }}
+    >
+      <Ionicons name="arrow-back" size={24} color="#fff" />
+    </TouchableOpacity>
+  );
+
   return (
     <Stack
-      screenOptions={{
-        headerShown: false,
-        headerBackTitle: "Voltar", // iOS
-        headerTintColor: "#000", // Cor da seta
+      screenOptions={{ //configuração de seta nativa
+        headerBackTitle: ' ',
+        headerTintColor: '#fff',
       }}
     >
       <Stack.Screen 
-        name="index" 
+        name="index"  //oq vai aparecer na tela principal
+        options={{ headerShown: false }} //Ocultar o header 
+      />
+      <Stack.Screen 
+        name="[id]" 
         options={{ 
-          headerShown: false // Esconde o header na tela inicial
+          title: '',
+          headerShown: true,
+                 // Oculta seta padrão
+          headerLeft: () => <CustomBackButton /> // Mostra a customizada
         }} 
       />
     </Stack>
